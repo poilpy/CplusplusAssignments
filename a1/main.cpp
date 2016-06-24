@@ -19,6 +19,10 @@ If neither is true then the user decides whether they want another card.
 #include <cstdlib>
 #include <ctime>
 
+
+const int BUST_LIMIT = 21;
+const int RAND_LIMIT = 10;
+
 using namespace std;
 
 
@@ -32,12 +36,11 @@ int main()
     int addCardValue;
     int total;
     char playChoice;
-    bool repeat;
 
     do
     {
-        card1 = (rand() % 10) + 1;
-        card2 = (rand() % 10) + 1;
+        card1 = (rand() % RAND_LIMIT) + 1;
+        card2 = (rand() % RAND_LIMIT) + 1;
         total = card1 + card2;
 
         cout << "First cards: " << card1 << ", " << card2 << endl;
@@ -48,19 +51,19 @@ int main()
 
 
 
-        while (total < 21 && addCardChoice == 'y')
+        while (total < BUST_LIMIT && addCardChoice == 'y')
         {
-            addCardValue = (rand() % 10) + 1;
+            addCardValue = (rand() % RAND_LIMIT) + 1;
             total = total + addCardValue;
 
             cout << "Card: " << addCardValue << endl;
             cout << "Total: " << total << endl;
 
-            if (total == 21)
+            if (total == BUST_LIMIT)
             {
                 cout << "Congratulations" << endl;
             }
-            else if (total > 21)
+            else if (total > BUST_LIMIT)
             {
                 cout << "Bust" << endl;
             }
@@ -75,15 +78,7 @@ int main()
         cout << "Do you want to play again?(y, n) : ";
         cin >> playChoice;
 
-        if (playChoice == 'y')
-        {
-            repeat = true;
-        }
-        else
-        {
-            repeat = false;
-        }
-    }while (repeat);
+    }while (playChoice == 'y');
 
 
     return 0;
