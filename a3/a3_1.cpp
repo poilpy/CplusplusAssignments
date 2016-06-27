@@ -3,16 +3,21 @@ a3_1
 Colin Murphy
 Dave Harden
 CIS 278
+6/24/16
 
-
+    This program takes in user input for 5 numbered cards and output
+whether those cards are a pair, a two pair, a three of a kind, a straight, a full house
+or a four of a kind.
 */
-
 
 #include <iostream>
 
-const int HAND_SIZE = 5;
-
 using namespace std;
+
+const int HAND_SIZE = 5;
+const int TWO_SAME = 2;
+const int THREE_SAME = 3;
+const int FOUR_SAME = 4;
 
 bool containsPair(const int hand[]);
 bool containsTwoPair(const int hand[]);
@@ -21,9 +26,10 @@ bool containsStraight(const int hand[]);
 bool containsFullHouse(const int hand[]);
 bool containsFourOfaKind(const int hand[]);
 int sameVal(const int hand[]);
-int valCount(int val, const int hand[]);
-int secondCheck(int val, const int hand[]);
-
+int valCount(int val,
+             const int hand[]);
+int secondCount(const int hand[],
+                int point);
 
 int main()
 
@@ -67,11 +73,6 @@ int main()
         cout << "High Card!" << endl;
     }
 
-    for(int i = 0; i < HAND_SIZE; i++)
-    {
-        cout << hand[i] << " ";
-    }
-
     return 0;
 }
 
@@ -79,9 +80,10 @@ int main()
 
 
 
+//containsPair takes in the 5 card hand as a parameter and returns true if any two values in the array are the same
 bool  containsPair(const int hand[])
 {
-    if(sameVal(hand) == 2)
+    if(sameVal(hand) >= TWO_SAME)
     {
         return true;
     }
@@ -93,10 +95,10 @@ bool  containsPair(const int hand[])
 
 
 
-
+//containsTwoPair takes in the 5 card hand as a parameter and returns true if there are 2 pairs in the hand
 bool  containsTwoPair(const int hand[])
 {
-    if(sameVal(hand) == 2 && secondCheck())
+    if(sameVal(hand) == TWO_SAME && secondCount(hand, 1) == TWO_SAME && secondCount(hand, HAND_SIZE - 1) == TWO_SAME)
     {
         return true;
     }
@@ -108,10 +110,10 @@ bool  containsTwoPair(const int hand[])
 
 
 
-
+//containsThreeOfaKind takes in the 5 card hand as a parameter and returns true if any three values in the array are the same
 bool  containsThreeOfaKind(const int hand[])
 {
-    if(sameVal(hand) == 3)
+    if(sameVal(hand) >= THREE_SAME)
     {
         return true;
     }
@@ -134,19 +136,10 @@ bool  containsStraight(const int hand[])
 
 
 
+//containsFullHouse takes in the 5 card hand as a parameter and returns true if the hand contains a pair and a three of a kind
 bool  containsFullHouse(const int hand[])
 {
-    return false;
-}
-
-
-
-
-
-
-bool  containsFourOfaKind(const int hand[])
-{
-    if(sameVal(hand) == 4 || sameVal(hand) == 5)
+    if(containsPair(hand) && containsThreeOfaKind(hand))
     {
         return true;
     }
@@ -158,6 +151,22 @@ bool  containsFourOfaKind(const int hand[])
 
 
 
+//containsFourOfaKind takes in the 5 card hand as a parameter and returns true if any 4 values in the array are the same
+bool  containsFourOfaKind(const int hand[])
+{
+    if(sameVal(hand) >= FOUR_SAME)
+    {
+        return true;
+    }
+    else
+        return false;
+}
+
+
+
+
+
+//valCount takes in the 5 card hand and a value with which to count the frequency of
 int valCount(int val, const int hand[])
 {
     int sameCount = 0;
@@ -170,6 +179,7 @@ int valCount(int val, const int hand[])
         }
     }
 
+
     return sameCount;
 }
 
@@ -177,7 +187,7 @@ int valCount(int val, const int hand[])
 
 
 
-
+//sameVal takes in the 5 card hand and loops through the hand, using valCount to check each value in the hand, returning the most frequent
 int sameVal(const int hand[])
 {
     int highest = 0;
@@ -196,18 +206,33 @@ int sameVal(const int hand[])
 
 
 
-
-int secondCheck(int val, const int hand[])
+//secondCount takes in the 5 card hand and repeats sameVal at the specified point
+int secondCount(const int hand[], int point)
 {
     int highest = 0;
 
-    for(int i = val; i < HAND_SIZE; i++)
+    for(int i = point; i < HAND_SIZE; i++)
     {
         if(valCount(i, hand) > highest)
         {
             highest = valCount(i, hand);
         }
     }
-
     return highest;
 }
+
+
+/*
+Enter five numeric cards, no face cards. Use 2 - 9.
+3
+Added : 3
+5
+Added : 5
+5
+Added : 5
+3
+Added : 3
+3
+Added : 3
+Full house!
+*/
