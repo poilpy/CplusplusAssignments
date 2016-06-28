@@ -42,8 +42,8 @@ int main()
     p1 = &a[0];
     p2 = &a[1];
 
-    *p1 = x;
-    *p2 = y;
+    *p2 = x;
+    *&p2 = y;
 
     cout << p1 << endl;
     cout << p2 << endl;
