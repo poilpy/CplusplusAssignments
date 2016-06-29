@@ -9,6 +9,8 @@ Colin Murphy
 
 using namespace std;
 
+const int TOP_SCORES = 4;
+
 void initializeArrays(string names[],
                       int scores[],
                       int size);
@@ -18,7 +20,9 @@ void sortData(string names[],
 void displayData(const string names[],
                  const int scores[],
                  int size);
-
+int indexOfSmallest(const int list[],
+                    int startingIndex,
+                    int size);
 
 
 int main()
@@ -30,7 +34,12 @@ int main()
     cout << "Enter the number of scores: ";
     cin >> numScores;
 
+    names = new string[numScores];
+    scores = new int[numScores];
+
     initializeArrays(names, scores, numScores);
+
+    sortData(names, scores, numScores);
 
     displayData(names, scores, numScores);
 
@@ -47,21 +56,14 @@ int main()
 
 
 
+
 void initializeArrays(string names[], int scores[], int size)
 {
-    names = new string[size];
-    scores = new int[size];
-    cout << "Enter names" << endl;
     for (int i = 0; i < size; i++)
     {
-        cout << "Name: ";
+        cout << "Enter the name for score #" << i+1 << ": ";
         cin >> names[i];
-    }
-
-    cout << "Enter scores" << endl;
-    for (int i = 0; i < size; i++)
-    {
-        cout << "Score: ";
+        cout << "Enter the score for score #" << i+1 << ": ";
         cin >> scores[i];
     }
 }
@@ -72,11 +74,38 @@ void initializeArrays(string names[], int scores[], int size)
 
 
 
+
+
 void sortData(string names[], int scores[], int size)
 {
 
-
+    for (int i = 0; i < size - 1; i++)
+    {
+        swap(names[indexOfSmallest(scores, i, size)], names[i]);
+        swap(scores[indexOfSmallest(scores, i, size)], scores[i]);
+    }
 }
+
+
+
+
+
+
+
+
+int indexOfSmallest(const int list[], int startingIndex, int size)
+{
+    int targetIndex = startingIndex;
+
+    for (int i = startingIndex + 1; i < size; i++){
+        if (list[i] < list[targetIndex]){
+            targetIndex = i;
+        }
+    }
+
+    return targetIndex;
+}
+
 
 
 
@@ -85,13 +114,19 @@ void sortData(string names[], int scores[], int size)
 
 void displayData(const string names[], const int scores[], int size)
 {
+    cout << endl;
+    cout << "Top scorers: " << endl;
 
-    for (int i = 0; i < size; i++)
-    {
-        cout << names[i] << endl;
-    }
-    for (int i = 0; i < size; i++)
-    {
-        cout << scores[i] << endl;
-    }
+    if(size >= TOP_SCORES)
+        for (int i = size - 1; i >= size - TOP_SCORES; i--)
+        {
+            cout << names[i];
+            cout << " : " << scores[i] << endl;
+        }
+    else
+        for (int i = size - 1; i >= 0; i--)
+        {
+            cout << names[i];
+            cout << " : " << scores[i] << endl;
+        }
 }
