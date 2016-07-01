@@ -1,3 +1,12 @@
+/*
+a4_1
+Colin Murphy
+CIS 278
+Dave Harden
+6/29/16
+
+    Simple pointer tasks.
+*/
 #include <iostream>
 
 using namespace std;
@@ -34,20 +43,21 @@ int main()
     noNegatives(&x);
     noNegatives(&y);
 
-    cout << "x is: " << p2 << endl;
+    cout << "x is: " << *p2 << endl;
     p2 = &y;
-    cout << "y is: " << p2 << endl;
+    cout << "y is: " << *p2 << endl;
 
     int a[2];
+    p2 = a;
+
+    p2[0] = x;
+    p2[1] = y;
+
+    cout << "a[0] : " << &p2[0] << endl;
+    cout << "a[1] : " << &p2[1] << endl;
+
     p1 = &a[0];
     p2 = &a[1];
-
-    *p2 = x;
-    *&p2 = y;
-
-    cout << p1 << endl;
-    cout << p2 << endl;
-
     temp = *p2;
     *p2 = *p1;
     *p1 = temp;
@@ -56,8 +66,8 @@ int main()
     cout << *p2 << endl;
 
     swap(&x, &y);
-    cout << x << endl;
-    cout << y << endl;
+    cout <<"x : " << x << endl;
+    cout <<"y : " << y << endl;
 
     swap(&a[0], &a[1]);
     cout << a[0] << endl;
@@ -65,6 +75,12 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+
 
 void noNegatives(int *x)
     {
@@ -75,9 +91,28 @@ void noNegatives(int *x)
 
 
 
+
+
+
 void swap(int *p1, int *p2)
 {
     int temp = *p2;
     *p2 = *p1;
     *p1 = temp;
 }
+
+
+/*
+99
+99
+x is: 0
+y is: 99
+a[0] : 0x6afee4
+a[1] : 0x6afee8
+99
+0
+x : 99
+y : 0
+0
+99
+*/
