@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1467754719 source:c:\users\colin\documents\github\cplusplusassignments\a6\main.cpp
+	<iostream>
+
+1467747513 source:c:\users\colin\documents\github\cplusplusassignments\a6\src\fraction.cpp
+	"fraction.h"
+
+1467747422 c:\users\colin\documents\github\cplusplusassignments\a6\include\fraction.h
+
