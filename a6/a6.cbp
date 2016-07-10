@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="a6" />
+		<Option title="a7" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -34,8 +34,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="a7_1.cpp" />
 		<Unit filename="include/fraction.h" />
-		<Unit filename="main.cpp" />
 		<Unit filename="src/fraction.cpp" />
 		<Extensions>
 			<code_completion />

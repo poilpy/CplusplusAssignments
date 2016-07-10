@@ -2,8 +2,13 @@
 1467754719 source:c:\users\colin\documents\github\cplusplusassignments\a6\main.cpp
 	<iostream>
 
-1467747513 source:c:\users\colin\documents\github\cplusplusassignments\a6\src\fraction.cpp
+1468056340 source:c:\users\colin\documents\github\cplusplusassignments\a6\src\fraction.cpp
 	"fraction.h"
+	<iostream>
 
-1467747422 c:\users\colin\documents\github\cplusplusassignments\a6\include\fraction.h
+1468123497 c:\users\colin\documents\github\cplusplusassignments\a6\include\fraction.h
+
+1468055067 source:c:\users\colin\documents\github\cplusplusassignments\a6\a7_1.cpp
+	<iostream>
+	"fraction.h"
 
