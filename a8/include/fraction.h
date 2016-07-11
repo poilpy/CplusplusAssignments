@@ -11,17 +11,21 @@ class fraction
         fraction operator-(const fraction f2)const;
         fraction operator*(const fraction f2)const;
         fraction operator/(const fraction f2)const;
-        bool isEqualTo(const fraction f2)const;
-        void operator<<();
-        bool operator<();
-        bool operator<=();
-        bool operator>();
-        bool operator>=();
-        bool operator==();
-        bool operator!=();
+        void operator<<(fraction f);
+        bool operator<(fraction f2);
+        bool operator<=(fraction f2);
+        bool operator>(fraction f2);
+        bool operator>=(fraction f2);
+        bool operator==(fraction f2);
+        bool operator!=(fraction f2);
+        fraction operator+=(fraction f2);
+        fraction operator-=(fraction f2);
+        fraction operator*=(fraction f2);
+        fraction operator/=(fraction f2);
+        void operator++(fraction f);
+        void operator--(fraction f);
 
     private:
-        void simplify();
         int numValue;
         int denValue;
 };

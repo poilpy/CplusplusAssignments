@@ -14,12 +14,10 @@ fraction::fraction()
 
 
 
-
-fraction::fraction(int num, int den)
+fraction::fraction(int whole)
 {
-    numValue = num;
-    denValue = den;
-    this->simplify();
+    numValue = whole;
+    denValue = 1;
 }
 
 
@@ -27,7 +25,18 @@ fraction::fraction(int num, int den)
 
 
 
-fraction fraction::addedTo(const fraction f2)const
+fraction::fraction(int num, int den)
+{
+    numValue = num;
+    denValue = den;
+}
+
+
+
+
+
+
+fraction fraction::operator+(const fraction f2)const
 {
     int modNum1;
     int modNum2;
@@ -91,38 +100,58 @@ fraction fraction::dividedBy(const fraction f2)const
 
 
 
-bool fraction::isEqualTo(const fraction f2)const
+void fraction::operator<<(fraction f)
 {
-    if (numValue == f2.numValue && denValue == f2.denValue)
+
+}
+bool fraction::operator<(fraction f2)
+{
+    if(numValue * f2.denValue < f2.numValue * denValue)
         return true;
     else
         return false;
 }
-
-
-
-
-
-
-void fraction::print()const
+bool fraction::operator<=(fraction f2)
 {
-    cout << numValue << "/" << denValue;
+
 }
-
-
-
-
-
-//simplify reduces the calling object to lowest terms
-void fraction::simplify()
+bool fraction::operator>(fraction f2)
 {
-    for (int i = denValue; i > 1; i--)
-    {
 
-        if ((numValue % i == 0) && (denValue % i == 0)) {
+}
+bool fraction::operator>=(fraction f2)
+{
 
-            numValue = numValue / i;
-            denValue = denValue / i;
-        }
-    }
+}
+bool fraction::operator==(fraction f2)
+{
+
+}
+bool fraction::operator!=(fraction f2)
+{
+
+}
+fraction fraction::operator+=(fraction f2)
+{
+
+}
+fraction fraction::operator-=(fraction f2)
+{
+
+}
+fraction fraction::operator*=(fraction f2)
+{
+
+}
+fraction fraction::operator/=(fraction f2)
+{
+
+}
+void fraction::operator++(fraction f)
+{
+
+}
+void fraction::operator--(fraction f)
+{
+
 }
