@@ -56,7 +56,7 @@ fraction fraction::operator+(const fraction f2)const
 
 
 
-fraction fraction::subtract(const fraction f2)const
+fraction fraction::operator-(const fraction f2)const
 {
     int modNum1;
     int modNum2;
@@ -76,7 +76,7 @@ fraction fraction::subtract(const fraction f2)const
 
 
 
-fraction fraction::multipliedBy(const fraction f2)const
+fraction fraction::operator*(const fraction f2)const
 {
     fraction result = fraction(numValue * f2.numValue, denValue * f2.denValue);
     result.simplify();
@@ -88,7 +88,7 @@ fraction fraction::multipliedBy(const fraction f2)const
 
 
 
-fraction fraction::dividedBy(const fraction f2)const
+fraction fraction::operator/(const fraction f2)const
 {
     fraction result = fraction(numValue * f2.denValue, denValue * f2.numValue);
     result.simplify();
@@ -100,9 +100,10 @@ fraction fraction::dividedBy(const fraction f2)const
 
 
 
-void fraction::operator<<(fraction f)
+friend ostream& fraction::operator<<(ostream& out, const fraction &f)
 {
-
+    out << f.numValue << "/" << f.denValue;
+    return out;
 }
 bool fraction::operator<(fraction f2)
 {
@@ -113,22 +114,42 @@ bool fraction::operator<(fraction f2)
 }
 bool fraction::operator<=(fraction f2)
 {
+    if(numValue * f2.denValue <= f2.numValue * denValue)
+        return true;
+    else
+        return false;
 
 }
 bool fraction::operator>(fraction f2)
 {
+    if(numValue * f2.denValue > f2.numValue * denValue)
+        return true;
+    else
+        return false;
 
 }
 bool fraction::operator>=(fraction f2)
 {
+    if(numValue * f2.denValue >= f2.numValue * denValue)
+        return true;
+    else
+        return false;
 
 }
 bool fraction::operator==(fraction f2)
 {
+    if(numValue * f2.denValue == f2.numValue * denValue)
+        return true;
+    else
+        return false;
 
 }
 bool fraction::operator!=(fraction f2)
 {
+    if(numValue * f2.denValue != f2.numValue * denValue)
+        return true;
+    else
+        return false;
 
 }
 fraction fraction::operator+=(fraction f2)
@@ -147,11 +168,19 @@ fraction fraction::operator/=(fraction f2)
 {
 
 }
-void fraction::operator++(fraction f)
+fraction fraction::operator++()
 {
 
 }
-void fraction::operator--(fraction f)
+fraction fraction::operator++(int)
+{
+
+}
+fraction fraction::operator--()
+{
+
+}
+fraction fraction::operator--(int)
 {
 
 }
