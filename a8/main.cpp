@@ -1,13 +1,18 @@
 #include <iostream>
-#include <string>
 #include "fraction.h"
+#include <fstream>
+#include <cassert>
+#include <string>
 using namespace std;
+using namespace cs_fraction;
 
 void BasicTest();
 void RelationTest();
 void BinaryMathTest();
 void MathAssignTest();
+bool eof(ifstream& in);
 string boolString(bool convertMe);
+
 
 int main()
 {
@@ -24,6 +29,7 @@ int main()
 void BasicTest()
 {
     cout << "\n----- Testing basic fraction creation & printing\n";
+    cout << "(fractions should be in reduced form, and as mixed numbers.)\n";
 
     const fraction fr[] = {fraction(4, 8), fraction(-15,21),
                            fraction(10), fraction(12, -3),
@@ -34,7 +40,27 @@ void BasicTest()
     }
 
 
+    cout << "\n----- Now reading fractions from file\n";
+    ifstream in("fraction.txt");
+    assert(in);
+    while (!eof(in)) {
+        fraction f;
+        if (in.peek() == '#') {
+            in.ignore(128, '\n');                       //skip this line, it's a comment
+        } else {
+            in >> f;
+            cout << "Read fraction = " << f << endl;
+        }
+    }
+}
 
+
+bool eof(ifstream& in)
+{
+	char ch;
+	in >> ch;
+	in.putback(ch);
+	return !in;
 }
 
 
@@ -170,4 +196,3 @@ void MathAssignTest()
     cout << "--g = " << --g << endl;
     cout << "Now g = " << g << endl;
 }
-
