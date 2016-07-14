@@ -1,6 +1,7 @@
 #include "fraction.h"
 #include <iostream>
 #include <cassert>
+#include <cmath>
 
 using namespace std;
 namespace cs_fraction
@@ -101,11 +102,32 @@ namespace cs_fraction
 
     ostream& operator<<(ostream& out, const fraction &f)
     {
-        int modNum = f.numValue - (f.numValue % f.denValue);
-        if(modNum != f.numValue)
-            out << modNum / f.denValue << " + " << f.numValue % f.denValue << "/" << f.denValue;
+        int modNum1;
+        int modNum2;
+
+        if(abs(f.numValue) > f.denValue)
+        {
+            out << ((f.numValue - f.numValue % f.denValue) / f.denValue);
+
+            if(f.numValue % f.denValue != 0)
+            {
+                out<< "+" << f.numValue % f.denValue << "/" << f.denValue;
+
+            }
+        }
+        else if(f.numValue == f.denValue)
+        {
+            out << f.numValue;
+        }
+        else if(f.numValue == 0)
+        {
+            out << 0;
+        }
         else
-            out << modNum / f.denValue;
+        {
+            out << f.numValue << "/" << f.denValue;
+        }
+
         return out;
     }
 
@@ -115,20 +137,25 @@ namespace cs_fraction
 
     istream& operator>>(istream& in, fraction &f)
     {
-        int temp;
-        in >> temp;
-        if (in.peek() == '+')
-        {
+//        int temp;
+//        in >> temp;
+//        if (in.peek() == '+')
+//        {
+//            in >> f.numValue >> f.denValue;
+//            f.numValue += temp * f.denValue;
+//        }
+//        else if (in.peek() == '/')
+//        {
+//            in >> f.denValue;
+//            f.numValue = temp;
+//        }
+//        else
+//        {
+//            f.numValue = temp;
+//            f.denValue = 1;
+//        }
 
-        }
-        else if (in.peek() == '/')
-        {
-
-        }
-        else
-        {
-
-        }
+        in >> f.numValue >> f.denValue;
     }
 
 
@@ -317,6 +344,11 @@ namespace cs_fraction
                 numValue = numValue / i;
                 denValue = denValue / i;
             }
+        }
+        if(denValue < 0)
+        {
+            denValue *= -1;
+            numValue *= -1;
         }
     }
 }

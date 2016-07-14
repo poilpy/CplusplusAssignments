@@ -37,6 +37,7 @@
 		<Unit filename="include/fraction.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/fraction.cpp" />
+		<Unit filename="src/fraction.txt" />
 		<Extensions>
 			<code_completion />
 			<envvars />

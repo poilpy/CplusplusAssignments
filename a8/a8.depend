@@ -1,16 +1,17 @@
 # depslib dependency file v1.0
-1468460155 source:c:\users\colin\documents\github\cplusplusassignments\a8\main.cpp
+1468528041 source:c:\users\colin\documents\github\cplusplusassignments\a8\main.cpp
 	<iostream>
 	"fraction.h"
 	<fstream>
 	<cassert>
 	<string>
 
-1468470827 c:\users\colin\documents\github\cplusplusassignments\a8\include\fraction.h
+1468528041 c:\users\colin\documents\github\cplusplusassignments\a8\include\fraction.h
 	<iostream>
 
-1468488599 source:c:\users\colin\documents\github\cplusplusassignments\a8\src\fraction.cpp
+1468532964 source:c:\users\colin\documents\github\cplusplusassignments\a8\src\fraction.cpp
 	"fraction.h"
 	<iostream>
 	<cassert>
+	<cmath>
 
