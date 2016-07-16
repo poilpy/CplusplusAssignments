@@ -112,8 +112,7 @@ namespace cs_fraction
 
             if(f.numValue % f.denValue != 0)
             {
-                out<< "+" << abs(f.numValue % f.denValue) << "/" << f.denValue;
-
+                out << "+" << abs(f.numValue % f.denValue) << "/" << f.denValue;
             }
         }
         else if(f.numValue == f.denValue)
