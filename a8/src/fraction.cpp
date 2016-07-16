@@ -51,6 +51,7 @@ namespace cs_fraction
         modNum2 = right.numValue * left.denValue;
 
         fraction result = fraction(modNum1 + modNum2, modDen);
+        result.simplify();
         return result;
     }
 
@@ -70,6 +71,7 @@ namespace cs_fraction
         modNum2 = right.numValue * left.denValue;
 
         fraction result = fraction(modNum1 - modNum2, modDen);
+        result.simplify();
         return result;
     }
 
@@ -81,6 +83,7 @@ namespace cs_fraction
     fraction operator*(const fraction& left, const fraction& right)
     {
         fraction result = fraction(left.numValue * right.numValue, left.denValue * right.denValue);
+        result.simplify();
         return result;
     }
 
@@ -92,6 +95,7 @@ namespace cs_fraction
     fraction operator/(const fraction& left, const fraction& right)
     {
         fraction result = fraction(left.numValue * right.denValue, left.denValue * right.numValue);
+        result.simplify();
         return result;
     }
 
@@ -102,16 +106,13 @@ namespace cs_fraction
 
     ostream& operator<<(ostream& out, const fraction &f)
     {
-        int modNum1;
-        int modNum2;
-
         if(abs(f.numValue) > f.denValue)
         {
             out << ((f.numValue - f.numValue % f.denValue) / f.denValue);
 
             if(f.numValue % f.denValue != 0)
             {
-                out<< "+" << f.numValue % f.denValue << "/" << f.denValue;
+                out<< "+" << abs(f.numValue % f.denValue) << "/" << f.denValue;
 
             }
         }
@@ -137,25 +138,42 @@ namespace cs_fraction
 
     istream& operator>>(istream& in, fraction &f)
     {
-//        int temp;
-//        in >> temp;
-//        if (in.peek() == '+')
-//        {
-//            in >> f.numValue >> f.denValue;
-//            f.numValue += temp * f.denValue;
-//        }
-//        else if (in.peek() == '/')
-//        {
-//            in >> f.denValue;
-//            f.numValue = temp;
-//        }
-//        else
-//        {
-//            f.numValue = temp;
-//            f.denValue = 1;
-//        }
+        int temp;
+        in >> temp;
+        if (in.peek() == '+')
+        {
+            cout << " *1 ";
+            in.ignore();
+            in >> f.numValue;
+            in.ignore();
+            in >> f.denValue;
+            if(temp < 0)
+            {
+                temp *= -1;
+                f.numValue += temp * f.denValue;
+                f.numValue *= -1;
+            }
+            else
+            {
+                f.numValue += temp * f.denValue;
+            }
+        }
+        else if (in.peek() == '/')
+        {
+            cout << " *2 ";
+            in.ignore();
+            in >> f.denValue;
+            f.numValue = temp;
+        }
+        else
+        {
+            cout << " *3 ";
+            f.numValue = temp;
+            f.denValue = 1;
+        }
 
-        in >> f.numValue >> f.denValue;
+        f.simplify();
+        return in;
     }
 
 
