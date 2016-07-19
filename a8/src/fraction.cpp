@@ -1,3 +1,9 @@
+/*
+    numValue and denValue are the values of the numerator and denominator,
+respectively. Fractions are stored in lowest terms with a positive numerator.
+*/
+
+
 #include "fraction.h"
 #include <iostream>
 #include <cassert>
@@ -134,14 +140,14 @@ namespace cs_fraction
 
 
 
-
+//Takes user input of mixed numbers, negative numbers, whole numbers or fractions
+//and stores them in fraction f.
     istream& operator>>(istream& in, fraction &f)
     {
         int temp;
         in >> temp;
         if (in.peek() == '+')
         {
-            cout << " *1 ";
             in.ignore();
             in >> f.numValue;
             in.ignore();
@@ -159,14 +165,12 @@ namespace cs_fraction
         }
         else if (in.peek() == '/')
         {
-            cout << " *2 ";
             in.ignore();
             in >> f.denValue;
             f.numValue = temp;
         }
         else
         {
-            cout << " *3 ";
             f.numValue = temp;
             f.denValue = 1;
         }
@@ -350,7 +354,7 @@ namespace cs_fraction
 
 
 
-
+//simplifies the calling fraction.
     void fraction::simplify()
     {
         for (int i = denValue; i > 1; i--)
