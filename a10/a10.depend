@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1469159796 source:c:\users\colin\documents\github\cplusplusassignments\a10\main.cpp
+	"mystring.h"
+	<fstream>
+	<cctype>
+	<string>
+	<cassert>
+	<iostream>
+
+1469181672 c:\users\colin\documents\github\cplusplusassignments\a10\include\mystring.h
+	<iostream>
+	<cstring>
+
+1469098271 source:c:\users\colin\documents\github\cplusplusassignments\a10\src\mystring.cpp
+	"myString.h"
+	<assert.h>
+
