@@ -36,6 +36,7 @@
 		</Compiler>
 		<Unit filename="include/myString.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="mystring.txt" />
 		<Unit filename="src/myString.cpp" />
 		<Extensions>
 			<code_completion />

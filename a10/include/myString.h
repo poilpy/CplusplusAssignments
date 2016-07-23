@@ -20,10 +20,10 @@ public:
                                const myString& right);
     friend istream& operator>>(istream& in,
                                const myString& right);
-    friend myString& operator+(myString& left,
-                               myString& right);
+    friend myString& operator+(const myString& left,
+                               const myString& right);
     friend myString& operator+=(myString& left,
-                               myString& right);
+                                const myString& right);
     friend bool operator<(const myString& left,
                           const myString& right);
     friend bool operator<=(const myString& left,

@@ -70,7 +70,8 @@ ostream& operator<<(ostream& out, const myString& right)
 
 istream& operator>>(istream& out, const myString& right)
 {
-
+    char temp;
+    in >> temp;
 }
 
 
@@ -80,16 +81,33 @@ istream& operator>>(istream& out, const myString& right)
 
 myString& operator+(const myString& left, const myString& right)
 {
-
+//    int newlen = strlen(left.array) + strlen(right.array) + 1;
+//    char* temp = new char[newlen];
+//    strcpy(temp, left.array);
+//    strcat(temp, right.array);
+//    strcpy(left, temp);
+//    delete[] temp;
 }
 
 
 
 
 
-myString& operator+=(const myString& left, const myString& right)
-{
 
+myString& operator+=(myString& left, const myString& right)
+{
+//    if (this != &right)
+//    {
+//        int newlen = strlen(left.array) + strlen(right.array) + 1;
+//        char* temp = new char[newlen];
+//        strcpy(temp, left.array);
+//        strcat(temp, right.array);
+//        delete left;
+//        left = new char[newlen];
+//        strcpy(left, temp);
+//        delete[] temp;
+//    }
+//    return *this;
 }
 
 
