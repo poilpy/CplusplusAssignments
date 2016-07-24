@@ -9,7 +9,7 @@
 1468922201 c:\users\colin\documents\github\cplusplusassignments\a8\include\fraction.h
 	<iostream>
 
-1468647382 source:c:\users\colin\documents\github\cplusplusassignments\a8\src\fraction.cpp
+1468922201 source:c:\users\colin\documents\github\cplusplusassignments\a8\src\fraction.cpp
 	"fraction.h"
 	<iostream>
 	<cassert>

@@ -1,3 +1,6 @@
+/*
+    Array is a c-string.
+*/
 #include "myString.h"
 #include <assert.h>
 
@@ -68,10 +71,12 @@ ostream& operator<<(ostream& out, const myString& right)
 
 
 
-istream& operator>>(istream& out, const myString& right)
+istream& operator>>(istream& in, myString& right)
 {
-    char temp;
+    char temp[127];
     in >> temp;
+    strcpy(right.array, temp);
+    return in;
 }
 
 
@@ -79,14 +84,12 @@ istream& operator>>(istream& out, const myString& right)
 
 
 
-myString& operator+(const myString& left, const myString& right)
+myString operator+(const myString& left, const myString& right)
 {
-//    int newlen = strlen(left.array) + strlen(right.array) + 1;
-//    char* temp = new char[newlen];
-//    strcpy(temp, left.array);
-//    strcat(temp, right.array);
-//    strcpy(left, temp);
-//    delete[] temp;
+    myString result;
+    strcpy(result.array, left.array);
+    strcat(result.array, right.array);
+    return result;
 }
 
 
@@ -94,20 +97,10 @@ myString& operator+(const myString& left, const myString& right)
 
 
 
-myString& operator+=(myString& left, const myString& right)
+myString myString::operator+=(const myString& right)
 {
-//    if (this != &right)
-//    {
-//        int newlen = strlen(left.array) + strlen(right.array) + 1;
-//        char* temp = new char[newlen];
-//        strcpy(temp, left.array);
-//        strcat(temp, right.array);
-//        delete left;
-//        left = new char[newlen];
-//        strcpy(left, temp);
-//        delete[] temp;
-//    }
-//    return *this;
+    *this = *this + right;
+	return *this;
 }
 
 
@@ -201,7 +194,9 @@ bool operator!=(const myString& left, const myString& right)
 
 void myString::read(istream& in, char stop)
 {
-
+    char temp[127];
+    in.getline(temp, 127, stop);
+    strcpy(array, temp);
 }
 
 

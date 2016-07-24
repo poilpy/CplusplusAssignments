@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1469216005 source:c:\users\colin\documents\github\cplusplusassignments\a10\main.cpp
+1469380546 source:c:\users\colin\documents\github\cplusplusassignments\a10\main.cpp
 	"mystring.h"
 	<fstream>
 	<cctype>
@@ -7,11 +7,11 @@
 	<cassert>
 	<iostream>
 
-1469220090 c:\users\colin\documents\github\cplusplusassignments\a10\include\mystring.h
+1469384701 c:\users\colin\documents\github\cplusplusassignments\a10\include\mystring.h
 	<iostream>
 	<cstring>
 
-1469220312 source:c:\users\colin\documents\github\cplusplusassignments\a10\src\mystring.cpp
+1469381900 source:c:\users\colin\documents\github\cplusplusassignments\a10\src\mystring.cpp
 	"myString.h"
 	<assert.h>
 
