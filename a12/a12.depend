@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1469483459 source:c:\users\colin\documents\github\cplusplusassignments\a12\barlog.cpp
+	"barlog.h"
+
+1469483592 c:\users\colin\documents\github\cplusplusassignments\a12\barlog.h
+	"demon.h"
+
+1469483604 c:\users\colin\documents\github\cplusplusassignments\a12\demon.h
+	"creature.h"
+
+1469483312 c:\users\colin\documents\github\cplusplusassignments\a12\creature.h
+
+1469483312 source:c:\users\colin\documents\github\cplusplusassignments\a12\creature.cpp
+	"creature.h"
+
+1469483493 source:c:\users\colin\documents\github\cplusplusassignments\a12\cyberdemon.cpp
+	"cyberdemon.h"
+
+1469483610 c:\users\colin\documents\github\cplusplusassignments\a12\cyberdemon.h
+	"demon.h"
+
+1469483362 source:c:\users\colin\documents\github\cplusplusassignments\a12\demon.cpp
+	"demon.h"
+
+1469483435 source:c:\users\colin\documents\github\cplusplusassignments\a12\elf.cpp
+	"elf.h"
+
+1469483613 c:\users\colin\documents\github\cplusplusassignments\a12\elf.h
+	"creature.h"
+
