@@ -3,15 +3,19 @@
 
 #include "demon.h"
 
-
+namespace cs_creature
+{
 class cyberdemon : public demon
 {
-    public:
-        cyberdemon();
+public:
+    cyberdemon();
+    cyberdemon(int newStrength, int newHitpoints);
+    int getDamage();
+    string getSpecies();
 
-    protected:
+protected:
 
-    private:
+private:
 };
-
+}
 #endif // CYBERDEMON_H

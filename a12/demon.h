@@ -3,15 +3,18 @@
 
 #include "creature.h"
 
-
+namespace cs_creature
+{
 class demon : public creature
 {
-    public:
-        demon();
+public:
+    demon();
+    int getDamage();
+    string getSpecies();
 
-    protected:
+protected:
 
-    private:
+private:
 };
-
+}
 #endif // DEMON_H

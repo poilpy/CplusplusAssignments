@@ -1,7 +1,7 @@
-#include "cyberdemon.h"
+#include "balrog.h"
 namespace cs_creature
 {
-cyberdemon::cyberdemon()
+balrog::balrog()
 {
 
 }
@@ -10,7 +10,7 @@ cyberdemon::cyberdemon()
 
 
 
-cyberdemon::cyberdemon(int newStrength, int newHitpoints)
+balrog::balrog(int newStrength, int newHitpoints)
 {
     strength = newStrength;
     hitpoints = newHitpoints;
@@ -20,16 +20,16 @@ cyberdemon::cyberdemon(int newStrength, int newHitpoints)
 
 
 
-string cyberdemon::getSpecies()
+string balrog::getSpecies()
 {
-    return "cyberdemon";
+    return "balrog";
 }
 
 
 
 
 
-int cyberdemon::getDamage()
+int balrog::getDamage()
 {
     int damage;
 
@@ -40,6 +40,10 @@ int cyberdemon::getDamage()
             damage = damage + 50;
             cout << "Demonic attack inflicts 50 additional damage points!" << endl;
         }
+
+    int damage2 = (rand() % strength) + 1;
+        cout << "Balrog speed attack inflicts " << damage2 << " additional damage points!" << endl;
+        damage += damage2;
 
     return damage;
 }

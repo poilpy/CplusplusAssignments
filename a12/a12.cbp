@@ -32,8 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="barlog.cpp" />
-		<Unit filename="barlog.h" />
+		<Unit filename="balrog.cpp" />
+		<Unit filename="balrog.h" />
 		<Unit filename="creature.cpp" />
 		<Unit filename="creature.h" />
 		<Unit filename="cyberdemon.cpp" />

@@ -3,15 +3,19 @@
 
 #include "creature.h"
 
-
+namespace cs_creature
+{
 class human : public creature
 {
-    public:
-        human();
+public:
+    human();
+    human(int newStrength, int newHitpoints);
+    int getDamage();
+    string getSpecies();
 
-    protected:
+protected:
 
-    private:
+private:
 };
-
+}
 #endif // HUMAN_H
