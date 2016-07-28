@@ -13,7 +13,6 @@ public:
     int getDamage();
     string getSpecies();
 
-protected:
 
 private:
 };

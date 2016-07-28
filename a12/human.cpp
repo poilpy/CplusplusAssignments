@@ -1,6 +1,7 @@
 #include "human.h"
 
-namespace cs_creature{
+namespace cs_creature
+{
 human::human()
 {
 
@@ -11,31 +12,24 @@ human::human()
 
 
 human::human(int newStrength, int newHitpoints)
+:
+    creature(newStrength, newHitpoints)
+    {
+
+    }
+
+
+
+
+
+string human::getSpecies()
 {
-    strength = newStrength;
-    hitpoints = newHitpoints;
+    return "human";
 }
 
 
 
 
 
-    string human::getSpecies()
-    {
-        return "human";
-    }
 
-
-
-
-
-    int human::getDamage()
-    {
-        int damage;
-
-        damage = (rand() % strength) + 1;
-        cout << getSpecies() << " attacks for " << damage << " points!" << endl;
-
-        return damage;
-    }
 }

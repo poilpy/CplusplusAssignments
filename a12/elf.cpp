@@ -11,10 +11,10 @@ elf::elf()
 
 
 
-    elf::elf(int newStrength, int newHitpoints)
+elf::elf(int newStrength, int newHitpoints)
+    :creature(newStrength, newHitpoints)
 {
-    strength = newStrength;
-    hitpoints = newHitpoints;
+
 }
 
 
@@ -34,8 +34,8 @@ int elf::getDamage()
 {
     int damage;
 
-    damage = (rand() % strength) + 1;
-    cout << getSpecies() << " attacks for " << damage << " points!" << endl;
+    damage = creature::getDamage();
+//    cout << "The " << getSpecies() << " attacks for " << damage << " points!" << endl;
 
     if ((rand() % 2) == 0)
     {

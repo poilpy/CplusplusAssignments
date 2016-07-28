@@ -10,10 +10,8 @@ class human : public creature
 public:
     human();
     human(int newStrength, int newHitpoints);
-    int getDamage();
     string getSpecies();
 
-protected:
 
 private:
 };

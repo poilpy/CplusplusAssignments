@@ -9,70 +9,118 @@
 using namespace std;
 using namespace cs_creature;
 
+void battleArena(creature &creature1, creature& creature2);
+
 int main()
 {
-    srand(time(0));
+	srand((time(0)));
 
-    human h1;
-    elf e1;
-    cyberdemon c1;
-    balrog b1;
+	elf e(50,50);
+	balrog b(50,50);
+	human h1(20, 60);
+	human h2(30, 40);
+	elf e1(15, 45);
+	balrog b1(30, 90);
+	balrog b2(25, 100);
+	cyberdemon c1(20, 100);
+	cyberdemon c2(25, 80);
 
-    human h(20, 30);
-    elf e(40, 50);
-    cyberdemon c(60, 70);
-    balrog b(80, 90);
+
+	battleArena(e, b);
+	battleArena(h1, e1);
+	battleArena(e1, c1);
+	battleArena(b1, c1);
+	battleArena(b2, c2);
+	battleArena(c1, h1);
+
+}
 
 
-    cout << "default human strength/hitpoints: " << h1.getStrength() << "/" << h1.getHitpoints() << endl;
-    cout << "default elf strength/hitpoints: " << e1.getStrength() << "/" << e1.getHitpoints() << endl;
-    cout << "default cyberdemon strength/hitpoints: " << c1.getStrength() << "/" << c1.getHitpoints() << endl;
-    cout << "default balrog strength/hitpoints: " << b1.getStrength() << "/" << b1.getHitpoints() << endl;
-    cout << "non-default human strength/hitpoints: " << h.getStrength() << "/" << h.getHitpoints() << endl;
-    cout << "non-default elf strength/hitpoints: " << e.getStrength() << "/" << e.getHitpoints() << endl;
-    cout << "non-default cyberdemon strength/hitpoints: " << c.getStrength() << "/" << c.getHitpoints() << endl;
-    cout << "non-default balrog strength/hitpoints: " << b.getStrength() << "/" << b.getHitpoints() << endl;
-    cout << endl << endl;
 
-    cout << "Examples of " << h.getSpecies() << " damage: " << endl;
-    for (int i = 0; i < 10; i++)
+
+
+void battleArena(creature &creature1, creature& creature2)
+{
+
+    while(creature1.getHitpoints() > 0 || creature2.getHitpoints() > 0)
     {
-        int damage = h.getDamage();
-        cout << " Total damage = " << damage << endl;
-        cout << endl;
+        creature1.setHitpoints(creature1.getHitpoints() - creature2.getDamage());
+        creature2.setHitpoints(creature2.getHitpoints() - creature1.getDamage());
     }
-    cout << endl;
 
-
-
-    cout << "Examples of " << e.getSpecies() << " damage: " << endl;
-    for (int i = 0; i < 10; i++)
-    {
-        int damage = e.getDamage();
-        cout << " Total damage = " << damage << endl;
-        cout << endl;
-    }
-    cout << endl;
-
-
-
-    cout << "Examples of " << c.getSpecies() << " damage: " << endl;
-    for (int i = 0; i < 10; i++)
-    {
-        int damage = c.getDamage();
-        cout << " Total damage = " << damage << endl;
-        cout << endl;
-    }
-    cout << endl;
-
-
-
-    cout << "Examples of " << b.getSpecies() << " damage: " << endl;
-    for (int i = 0; i < 10; i++)
-    {
-        int damage = b.getDamage();
-        cout << " Total damage = " << damage << endl;
-        cout << endl;
-    }
     cout << endl;
 }
+
+
+/*
+The balrog attacks for 2 points!
+Balrog speed attack inflicts 12 additional damage points!
+The elf attacks for 43 points!
+The balrog attacks for 33 points!
+Balrog speed attack inflicts 19 additional damage points!
+The elf attacks for 36 points!
+Magical attack inflicts 36 additional damage points!
+
+The elf attacks for 3 points!
+Magical attack inflicts 3 additional damage points!
+The human attacks for 7 points!
+The elf attacks for 14 points!
+The human attacks for 8 points!
+The elf attacks for 11 points!
+The human attacks for 12 points!
+The elf attacks for 9 points!
+Magical attack inflicts 9 additional damage points!
+The human attacks for 20 points!
+The elf attacks for 2 points!
+The human attacks for 2 points!
+The elf attacks for 11 points!
+The human attacks for 6 points!
+
+The cyberdemon attacks for 13 points!
+The elf attacks for 8 points!
+The cyberdemon attacks for 16 points!
+The elf attacks for 12 points!
+Magical attack inflicts 12 additional damage points!
+The cyberdemon attacks for 20 points!
+The elf attacks for 5 points!
+The cyberdemon attacks for 10 points!
+The elf attacks for 15 points!
+The cyberdemon attacks for 18 points!
+The elf attacks for 8 points!
+Magical attack inflicts 8 additional damage points!
+The cyberdemon attacks for 20 points!
+The elf attacks for 10 points!
+Magical attack inflicts 10 additional damage points!
+The cyberdemon attacks for 6 points!
+The elf attacks for 5 points!
+The cyberdemon attacks for 16 points!
+The elf attacks for 3 points!
+Magical attack inflicts 3 additional damage points!
+The cyberdemon attacks for 9 points!
+The elf attacks for 14 points!
+
+The cyberdemon attacks for 19 points!
+Demonic attack inflicts 50 additional damage points!
+The balrog attacks for 18 points!
+Balrog speed attack inflicts 15 additional damage points!
+The cyberdemon attacks for 1 points!
+The balrog attacks for 28 points!
+Balrog speed attack inflicts 26 additional damage points!
+The cyberdemon attacks for 7 points!
+Demonic attack inflicts 50 additional damage points!
+The balrog attacks for 22 points!
+Balrog speed attack inflicts 28 additional damage points!
+
+The cyberdemon attacks for 10 points!
+The balrog attacks for 8 points!
+Balrog speed attack inflicts 20 additional damage points!
+The cyberdemon attacks for 15 points!
+Demonic attack inflicts 50 additional damage points!
+The balrog attacks for 7 points!
+Balrog speed attack inflicts 13 additional damage points!
+The cyberdemon attacks for 13 points!
+Demonic attack inflicts 50 additional damage points!
+The balrog attacks for 8 points!
+Demonic attack inflicts 50 additional damage points!
+Balrog speed attack inflicts 24 additional damage points!
+*/

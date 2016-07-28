@@ -11,9 +11,9 @@ cyberdemon::cyberdemon()
 
 
 cyberdemon::cyberdemon(int newStrength, int newHitpoints)
+    :demon(newStrength, newHitpoints)
 {
-    strength = newStrength;
-    hitpoints = newHitpoints;
+
 }
 
 
@@ -29,18 +29,5 @@ string cyberdemon::getSpecies()
 
 
 
-int cyberdemon::getDamage()
-{
-    int damage;
 
-    damage = (rand() % strength) + 1;
-    cout << getSpecies() << " attacks for " << damage << " points!" << endl;
-
-    if (rand() % 4 == 0) {
-            damage = damage + 50;
-            cout << "Demonic attack inflicts 50 additional damage points!" << endl;
-        }
-
-    return damage;
-}
 }

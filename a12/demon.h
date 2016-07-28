@@ -9,10 +9,10 @@ class demon : public creature
 {
 public:
     demon();
+    demon(int newStrength, int newHitpoints);
     int getDamage();
     string getSpecies();
 
-protected:
 
 private:
 };

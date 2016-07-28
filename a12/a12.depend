@@ -5,45 +5,45 @@
 1469489565 c:\users\colin\documents\github\cplusplusassignments\a12\barlog.h
 	"demon.h"
 
-1469504291 c:\users\colin\documents\github\cplusplusassignments\a12\demon.h
+1469668499 c:\users\colin\documents\github\cplusplusassignments\a12\demon.h
 	"creature.h"
 
-1469504291 c:\users\colin\documents\github\cplusplusassignments\a12\creature.h
+1469690094 c:\users\colin\documents\github\cplusplusassignments\a12\creature.h
 	<iostream>
 	<cstdlib>
 	<string>
 
-1469504291 source:c:\users\colin\documents\github\cplusplusassignments\a12\creature.cpp
+1469689166 source:c:\users\colin\documents\github\cplusplusassignments\a12\creature.cpp
 	"creature.h"
 
-1469503625 source:c:\users\colin\documents\github\cplusplusassignments\a12\cyberdemon.cpp
+1469689476 source:c:\users\colin\documents\github\cplusplusassignments\a12\cyberdemon.cpp
 	"cyberdemon.h"
 
-1469504291 c:\users\colin\documents\github\cplusplusassignments\a12\cyberdemon.h
+1469689476 c:\users\colin\documents\github\cplusplusassignments\a12\cyberdemon.h
 	"demon.h"
 
-1469504291 source:c:\users\colin\documents\github\cplusplusassignments\a12\demon.cpp
+1469689075 source:c:\users\colin\documents\github\cplusplusassignments\a12\demon.cpp
 	"demon.h"
 
-1469504291 source:c:\users\colin\documents\github\cplusplusassignments\a12\elf.cpp
+1469689075 source:c:\users\colin\documents\github\cplusplusassignments\a12\elf.cpp
 	"elf.h"
 
-1469504291 c:\users\colin\documents\github\cplusplusassignments\a12\elf.h
+1469617810 c:\users\colin\documents\github\cplusplusassignments\a12\elf.h
 	"creature.h"
 
-1469504291 source:c:\users\colin\documents\github\cplusplusassignments\a12\human.cpp
+1469689476 source:c:\users\colin\documents\github\cplusplusassignments\a12\human.cpp
 	"human.h"
 
-1469504291 c:\users\colin\documents\github\cplusplusassignments\a12\human.h
+1469689476 c:\users\colin\documents\github\cplusplusassignments\a12\human.h
 	"creature.h"
 
-1469504335 source:c:\users\colin\documents\github\cplusplusassignments\a12\balrog.cpp
+1469689075 source:c:\users\colin\documents\github\cplusplusassignments\a12\balrog.cpp
 	"balrog.h"
 
-1469504291 c:\users\colin\documents\github\cplusplusassignments\a12\balrog.h
+1469617810 c:\users\colin\documents\github\cplusplusassignments\a12\balrog.h
 	"demon.h"
 
-1469504291 source:c:\users\colin\documents\github\cplusplusassignments\a12\main.cpp
+1469693228 source:c:\users\colin\documents\github\cplusplusassignments\a12\main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>

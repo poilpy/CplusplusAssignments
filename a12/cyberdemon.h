@@ -10,10 +10,8 @@ class cyberdemon : public demon
 public:
     cyberdemon();
     cyberdemon(int newStrength, int newHitpoints);
-    int getDamage();
     string getSpecies();
 
-protected:
 
 private:
 };
