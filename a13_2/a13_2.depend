@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1469385085 source:c:\users\colin\documents\github\cplusplusassignments\a13_2\mystring.cpp
+	"myString.h"
+	<assert.h>
+
+1469385085 c:\users\colin\documents\github\cplusplusassignments\a13_2\mystring.h
+	<iostream>
+	<cstring>
+
