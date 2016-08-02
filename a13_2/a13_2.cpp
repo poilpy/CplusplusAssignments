@@ -12,7 +12,7 @@ int main()
     myString read;
 
     cout << "Enter a string: ";
-    cin >> read;
+    cin.getline(read);
 
     while(read != "quit")
     {
@@ -36,6 +36,16 @@ int main()
 bool isAPalindrome(myString read, int lower, int upper)
 {
 
+    if(ispunct(read[lower]) || isspace(read[lower]))
+        lower + 1;
+    if(ispunct(read[upper]) || isspace(read[upper]))
+        upper + 1;
+
+    if(lower >= upper)
+        return true;
+    if(read[lower] != read[upper])
+        return false;
+    return isAPalindrome(read, ++lower, --upper);
 }
 
 

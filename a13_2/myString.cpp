@@ -194,8 +194,9 @@ bool operator!=(const myString& left, const myString& right)
 
 void myString::read(istream& in, char stop)
 {
-    char temp[127];
-    in.getline(temp, 127, stop);
+    char temp[128];
+    delete
+    in.getline(temp, 128, stop);
     strcpy(array, temp);
 }
 
