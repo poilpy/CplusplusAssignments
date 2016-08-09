@@ -73,8 +73,10 @@ ostream& operator<<(ostream& out, const myString& right)
 
 istream& operator>>(istream& in, myString& right)
 {
-    char temp[127];
+    delete[] right.array;
+    char temp[128];
     in >> temp;
+    right.array = new char[strlen(temp) + 1];
     strcpy(right.array, temp);
     return in;
 }
@@ -195,8 +197,10 @@ bool operator!=(const myString& left, const myString& right)
 void myString::read(istream& in, char stop)
 {
     char temp[128];
-    delete
+
     in.getline(temp, 128, stop);
+    delete [] array;
+    array = new char[strlen(temp) + 1];
     strcpy(array, temp);
 }
 

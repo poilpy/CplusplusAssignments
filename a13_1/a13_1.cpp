@@ -1,22 +1,33 @@
-    #include <iostream>
-    #include <cstring>
+/*
+a13_1
+Colin Murphy
+CIS 278
+Dave Harden
+7/31/16
+    This program tests functions that reverse both arrays of characters and
+    c-style strings.
 
-    using namespace std;
+*/
 
-void reverseWithinBounds(char array[], int lowerBound, int upperBound);
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+void reverseWithinBounds(char arrayR[], int lowerBound, int upperBound);
 void reverseCstring(char* arrayC);
 
 int main()
 {
-    char test[] = "0123456789";
-    char* testC = "abcdefghijklmnopqrstuvwxyz";
+    char test[11] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    char testString[] = "abcdefghijklmnopqrstuvwxyz";
 
     reverseWithinBounds(test, 4, 6);
-    reverseCstring(testC);
+    reverseCstring(testString);
 
     cout << test << endl;
 
-    cout << testC << endl;
+    cout << testString << endl;
 
 
 
@@ -27,21 +38,22 @@ int main()
 
 
 
-
-void reverseWithinBounds(char array[], int lowerBound, int upperBound)
+/*
+    reverseWithinBounds takes in an array of characters and the lower and upper
+    bounds of the array. Reverses the array between those bounds.
+*/
+void reverseWithinBounds(char arrayR[], int lowerBound, int upperBound)
 {
     char temp;
 
-    if(lowerBound != upperBound)
+    if(lowerBound < upperBound)
     {
-        temp = array[upperBound];
-    cout << array[lowerBound] << endl;
-        array[upperBound] = array[lowerBound];
-        array[lowerBound] = temp;
+        temp = arrayR[upperBound];
+        arrayR[upperBound] = arrayR[lowerBound];
+        arrayR[lowerBound] = temp;
 
-        reverseWithinBounds(array, lowerBound + 1, upperBound - 1);
+        reverseWithinBounds(arrayR, ++lowerBound, --upperBound);
     }
-    cout << array << endl;
 
 }
 
@@ -49,7 +61,9 @@ void reverseWithinBounds(char array[], int lowerBound, int upperBound)
 
 
 
-
+/*
+    reverseCstring takes in a c-string and reverses the whole string.
+*/
 void reverseCstring(char* arrayC)
 {
     reverseWithinBounds(arrayC, 0, strlen(arrayC) - 1);
@@ -57,3 +71,10 @@ void reverseCstring(char* arrayC)
 
 
 
+
+
+
+/*
+0123654789
+zyxwvutsrqponmlkjihgfedcba
+*/
