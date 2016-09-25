@@ -11,7 +11,7 @@ int square(int sq);
 
 int main()
 {
-    cout << square(45) << endl;
+    cout << square(100000) << endl;
     return 0;
 }
 

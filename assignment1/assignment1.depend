@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1473209257 source:c:\users\colin\documents\github\cplusplusassignments\assignment1\calcdriver.cpp
+	<iostream>
+	"calculator.h"
+
+1473209254 c:\users\colin\documents\github\cplusplusassignments\assignment1\calculator.h
+
+1473209256 source:c:\users\colin\documents\github\cplusplusassignments\assignment1\calculator.cpp
+	"calculator.h"
+
