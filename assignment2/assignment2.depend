@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1475044708 source:c:\users\colin\documents\github\cplusplusassignments\assignment2\bag.cpp
+	"bag.h"
+
+1475042431 c:\users\colin\documents\github\cplusplusassignments\assignment2\bag.h
+	<cstddef>
+
+1475046927 source:c:\users\colin\documents\github\cplusplusassignments\assignment2\bagdr.cpp
+	<iostream>
+	"bag.h"
+
