@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1477478701 source:c:\users\colin\documents\github\cplusplusassignments\assignment3\itemtype.cpp
+	"ItemType.h"
+
+1477488845 c:\users\colin\documents\github\cplusplusassignments\assignment3\itemtype.h
+	<fstream>
+
+1477488609 source:c:\users\colin\documents\github\cplusplusassignments\assignment3\listdr.cpp
+	<iostream>
+	"unsorted.h"
+
+1477488505 source:c:\users\colin\documents\github\cplusplusassignments\assignment3\unsorted.cpp
+	"unsorted.h"
+
+1477488782 c:\users\colin\documents\github\cplusplusassignments\assignment3\unsorted.h
+	<cstdlib>
+	"ItemType.h"
+
