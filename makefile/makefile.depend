@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1478771220 source:c:\users\colin\documents\github\cplusplusassignments\makefile\exrect.cpp
+	<iostream>
+	"rectangle.h"
+
+1479214834 c:\users\colin\documents\github\cplusplusassignments\makefile\rectangle.h
+
+1479214833 source:c:\users\colin\documents\github\cplusplusassignments\makefile\rectangle.cpp
+	<iostream>
+	"rectangle.h"
+

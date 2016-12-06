@@ -3,6 +3,21 @@
 unsorted::unsorted()
 {
     length = 0;
+
+    listData = NULL;
+}
+
+unsorted::~unsorted()
+// Post: List is empty; all items have been deallocated.
+{
+    NodeType* tempPtr;
+
+    while (listData != NULL)
+    {
+        tempPtr = listData;
+        listData = listData->next;
+        delete tempPtr;
+    }
 }
 
 void unsorted::MakeEmpty()

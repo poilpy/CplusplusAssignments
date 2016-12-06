@@ -16,6 +16,7 @@ public:
 
     /** Default constructor */
     unsorted();
+    ~unsorted();
     void MakeEmpty();
 //
 //Preconditions:      None

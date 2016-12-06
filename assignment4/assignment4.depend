@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1479893008 source:c:\users\colin\documents\github\cplusplusassignments\assignment4\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+
+1479868683 source:c:\users\colin\documents\github\cplusplusassignments\assignment4\listtype.cpp
+	"listType.h"
+
+1479872160 c:\users\colin\documents\github\cplusplusassignments\assignment4\listtype.h
+	<iostream>
+	<string>
+
